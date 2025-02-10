@@ -1,3 +1,21 @@
 <body>
-    <h1>Welcome to home page, <span style="color: red;">{{name}}</span></h1>
+    <h1>Welcome to homepage, <span styles='color: red'>{{name}}</span></h1>
+    <form action="">
+        <div>
+            <label for="searchMovie" class="form-label">
+                Search for movie:
+            </label>
+            <input type="text" class="form-control" name="searchMovie">
+        </div>
+    </form>
+    <p> Searching for {{SearchTerm}} </p>
+        {% for movie in movies %}
+            <div>
+                <h2>{{movie.title}}</h2>
+                <h3>{{movie.description}}</h3>
+                {% if movie.url %}
+                    <a href="{{movie.url}}">Movie Link</a>
+                {% endif %}
+            </div>
+        {% endfor %}
 </body> 
